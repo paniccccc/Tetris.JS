@@ -1,2 +1,2 @@
-# Tetris_JS
- 
+# Tetris.js
+Code for Tetris made using Javascript, HTML and CSS
