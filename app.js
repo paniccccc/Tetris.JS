@@ -64,6 +64,15 @@ function undraw(){
 
 timerId= setInterval(moveDown, 500);
 
+function control(e){
+
+  if(e.key === 37){
+    moveLeft();
+  }
+}
+
+document.addEventListener('keyup', control)
+
 function moveDown(){
   undraw();
   currentPos+= width;
@@ -83,6 +92,18 @@ function freeze(){
   }
 }
 
+function moveLeft(){
+  undraw();
+  const isLeft = current.some(index => (currentPos%width===0));
+
+  if(!isLeft) currentPos-=1;
+
+  if(current.some(index=> squares[currentPos+index].classList.contains('taken'))){
+    currentPos+=1;
+  }
+
+  draw();
+}
 
 
 
