@@ -65,10 +65,17 @@ function undraw(){
 timerId= setInterval(moveDown, 500);
 
 function control(e){
-
-  if(e.key === 37){
-    moveLeft();
+ 
+  if(e.keyCode === 37) {
+    moveLeft()
+  } else if (e.keyCode === 38) {
+    rotate()
+  } else if (e.keyCode === 39) {
+    moveRight()
+  } else if (e.keyCode === 40) {
+    moveDown()
   }
+  
 }
 
 document.addEventListener('keyup', control)
@@ -94,7 +101,7 @@ function freeze(){
 
 function moveLeft(){
   undraw();
-  const isLeft = current.some(index => (currentPos%width===0));
+  const isLeft = current.some(index => (currentPos+index)%width===0));
 
   if(!isLeft) currentPos-=1;
 
@@ -105,6 +112,16 @@ function moveLeft(){
   draw();
 }
 
+function moveRight() {
+  undraw();
+  const isRight= current.some(index => (currentPos + index) % width === width -1);
+  if(!isAtRightEdge) currentPosition +=1;
+
+  if(current.some(index => squares[currentPos + index].classList.contains('taken'))) {
+    currentPosition -=1;
+  }
+  draw();
+}
 
 
 
