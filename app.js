@@ -112,17 +112,4 @@ function moveLeft(){
   draw();
 }
 
-function moveRight() {
-  undraw();
-  const isRight= current.some(index => (currentPos + index) % width === width -1);
-  if(!isAtRightEdge) currentPosition +=1;
-
-  if(current.some(index => squares[currentPos + index].classList.contains('taken'))) {
-    currentPosition -=1;
-  }
-  draw();
-}
-
-
-
 })
