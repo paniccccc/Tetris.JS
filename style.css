@@ -1,12 +1,21 @@
 .grid{
     width: 400px;
-    height: 400px;
+    height: 401px;
     background-color:black;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
     border: 1px solid cyan; 
 }
+
+.mini-grid {
+    margin-left: 50px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: darkorchid;
+  }
 
 h1{ font-size: 170px;
     font-family: 'Rubik', sans-serif;

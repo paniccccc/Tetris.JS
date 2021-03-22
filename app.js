@@ -62,7 +62,7 @@ function undraw(){
   })
 }
 
-timerId= setInterval(moveDown, 500);
+timerId= setInterval(moveDown, 1500);
 
 function control(e){
  
@@ -121,7 +121,30 @@ function moveLeft(){
   draw();
 }
 
+function moveRight(){
+  undraw()
+  const isAtRightEdge= current.some(index=>(currentPos+index)%width===width-1)
 
+  if(!isAtRightEdge) currentPos+=1
+
+  if(current.some(index=>squares[currentPos+index].classList.contains('taken'))) {
+    currentPos-=1
+  }
+
+  draw()
+}
+
+function rotate(){
+  undraw()
+  currentRot++
+
+  if(currentRot===current.length){
+    currentRot=0
+  }
+
+  current=Tetrominoes[random][currentRot]
+  draw()
+}
 
 
 
