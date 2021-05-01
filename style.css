@@ -1,3 +1,5 @@
+
+
 .grid{
     width: 400px;
     height: 401px;
@@ -15,6 +17,12 @@
     display: flex;
     flex-wrap: wrap;
     background-color: darkorchid;
+    margin: auto;
+  }
+
+  .mini-grid div{
+    height: 20px;
+    width: 20px;
   }
 
 h1{ font-size: 170px;
