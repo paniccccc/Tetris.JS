@@ -151,7 +151,6 @@ function rotate(){
 const dispSquares=document.querySelectorAll('.mini-grid div')
 const displayWidth=4
 let displayIndex=0
-
 const upNextTetro=[
   [1,width+1,width*2+1,width*3+1],
   [width,width+1,width+2,width+3],
@@ -165,7 +164,9 @@ function dispShape(){
 })
 
 upNextTetro[nextRandom].forEach(index=>{
-  dispSquares[displayIndex+index].classList.add('tetromino')
+  displaySquares[displayIndex+index].classList.add('tetronimo')
 })
 
-}})
+}
+
+})
