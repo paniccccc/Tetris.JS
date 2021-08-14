@@ -65,11 +65,12 @@ function undraw(){
 
 timerId= setInterval(moveDown, 1500);
 
+//function for controlling blocks
 function control(e){
  
   if(e.keyCode === 37) {
     moveLeft();
-  } else if (e.keyCode === 38) {
+  } else if (e.keyCode === 82) {
     rotate();
   } else if (e.keyCode === 39) {
     moveRight();
@@ -89,12 +90,6 @@ function moveDown(){
   freeze();
 }
 
-function moveRight(){
-  undraw();
-  const isRight = currentPos
-}
-
-
 function freeze(){
 
   if(current.some(index => squares[currentPos+index+width].classList.contains('taken'))){
@@ -108,6 +103,8 @@ function freeze(){
   }
 }
 
+
+//move left
 function moveLeft(){
   undraw();
   const isLeft = current.some(index => (currentPos+index)%width===0);
@@ -123,6 +120,7 @@ function moveLeft(){
   draw();
 }
 
+//move right
 function moveRight(){
   undraw()
   const isAtRightEdge= current.some(index=>(currentPos+index)%width===width-1)
@@ -136,6 +134,7 @@ function moveRight(){
   draw()
 }
 
+//rotate piece
 function rotate(){
   undraw()
   currentRot++
